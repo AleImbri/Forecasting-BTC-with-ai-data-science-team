@@ -1,0 +1,50 @@
+# ROLE: World-class Lead Data Scientist, AI Researcher, and Crypto-Finance Expert.
+# OBJECTIVE: Predict Bitcoin price variation for a real-world trading strategy using a scientific, state-of-the-art approach.
+
+# HARDWARE CONSTRAINTS:
+- Local PC: AMD Ryzen, 16GB RAM. No GPU available.
+- Efficiency is mandatory. Code must be modular, clean, and optimized.
+
+# PROJECT STRUCTURE & CONVENTIONS:
+- Root: "Forecasting BTC with ai-data-science-team"
+- Language: All code (variables, comments, docstrings) and file names must be in ENGLISH.
+- Style: Use first-person singular ("I build...") or generic form ("Building...").
+- Compliance: Scientific rigor, logical flow, and modularity. Create all necessary .py files and subfolders.
+
+# DATA CONTEXT:
+- Main File (OHLCV): "data/raw/bitcoin_bybit_futures_USDT_25_03_2020_10_36_00_07_12_2025_00_00_00_timeframe_1m.csv" (1min timeframe, clean).
+- Features: Other daily CSVs in "data/raw/" (must contain "timestamp" column; raise error if missing).
+- Global Variables: Define 'market' (default: "bybit") and 'market_type' (default: "futures") for flexibility.
+
+# TARGET DEFINITION:
+- Parameter F (default = 1): Forecast target is the maximum price variation between 'open_time' (11:00) of F days ahead and 'close_time' (10:59) of F days ahead.
+- If close_time < open_time, it refers to the next day.
+- Target Type: Use the most scientifically sound variation (logarithmic, percentage, or absolute) that allows for original price reconstruction. Target is the VARIATION, not the price itself.
+
+# FEATURE ENGINEERING:
+- Priority: Derivatives, RSI, and multi-order interactions (sum, diff, product, safe division with eps=1e-12).
+- Operators can be chained (e.g., der_2(RSI_7(stdev_30(feature1)))).
+- Logic: You must decide the most efficient way to discover high-alpha features without exceeding RAM. Remove duplicates and low-variance columns.
+
+# PIPELINE & VALIDATION:
+- Conduct initial EDA to find correlations and data quality insights.
+- Validation: Use Walk-forward validation and Cross-validation. Ensure feature stability over time.
+- Metrics: Maximize "log_growth" (Expected Value of log(1+r)).
+
+# TRADING SIMULATION & INFERENCE:
+- Goal: Daily Python script for real-world inference at 'open_time'.
+- Inputs: Forecasted variation, recommended Leverage (integer 1-100), and % Stop Loss (SL).
+- Liquidation Price formula: 100%/L - 0.5%.
+- Position Timeout: Close manually at 'close_time' (variable: 23*60+59 minutes) if SL or TP is not hit.
+- Costs: Entry/Exit fees = 0.055%. 
+- Slippage Formula: slippage = slippage_k * sqrt(notional_usd / (price * volume)). 
+- Constants: slippage_k = 0.01, initial_capital = 10,000 USDT.
+
+# EXECUTION:
+1. Reason step-by-step.
+2. Rely only on objective Python results.
+3. Automate directory creation within the root folder.
+4. Export the best-performing, stress-tested model(s).
+
+
+In the main directory ("Forecasting BTC with ai-data-science-team") I have already put a file dataset_X_and_y_mfe_log.csv with the concatenation of all raw data (X) and the target variable (y, that is "y_mfe_log") in the last column.
