@@ -1,0 +1,12 @@
+{
+  "run_id": "aa423cf53120487a8e1b23bea64eed09",
+  "model_uri": "models:/m-ca3652cb86f34bc499916d25cbeb1a42",
+  "best_model_id": "StackedEnsemble_AllModels_1_AutoML_25_20260111_194634",
+  "model_files": [
+    "model/MLmodel",
+    "model/conda.yaml",
+    "model/model.h2o",
+    "model/python_env.yaml",
+    "model/requirements.txt"
+  ]
+}

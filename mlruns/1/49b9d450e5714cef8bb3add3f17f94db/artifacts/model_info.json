@@ -1,0 +1,12 @@
+{
+  "run_id": "49b9d450e5714cef8bb3add3f17f94db",
+  "model_uri": "models:/m-528784f3d6dc41fe9c0b56767a7f37e9",
+  "best_model_id": "GBM_grid_1_AutoML_4_20260109_201711_model_73",
+  "model_files": [
+    "model/MLmodel",
+    "model/conda.yaml",
+    "model/model.h2o",
+    "model/python_env.yaml",
+    "model/requirements.txt"
+  ]
+}

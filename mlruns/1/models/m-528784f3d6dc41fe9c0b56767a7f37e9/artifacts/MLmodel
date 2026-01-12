@@ -1,0 +1,21 @@
+artifact_path: file:///c:/Users/Alessandro/Desktop/Cartelle/Mie/Programmi personali
+  in Python/Forecasting BTC with ai-data-science-team/mlruns/1/models/m-528784f3d6dc41fe9c0b56767a7f37e9/artifacts
+flavors:
+  h2o:
+    code: null
+    data: model.h2o
+    h2o_version: 3.46.0.9
+  python_function:
+    data: model.h2o
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.h2o
+    python_version: 3.11.1
+mlflow_version: 3.8.1
+model_id: m-528784f3d6dc41fe9c0b56767a7f37e9
+model_size_bytes: 120421
+model_uuid: m-528784f3d6dc41fe9c0b56767a7f37e9
+prompts: null
+run_id: 49b9d450e5714cef8bb3add3f17f94db
+utc_time_created: '2026-01-09 19:29:41.078474'
